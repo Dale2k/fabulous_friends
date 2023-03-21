@@ -1,36 +1,24 @@
-var apiURL = "https://api.thecatapi.com/v1/images/search"
+var apiURL = "https://api.thecatapi.com/v1/images/search?&limit=10";
 
 var toJSON = function (response) {
-    return response.json();
-}
-var idEl = document.querySelector('#id')
+  console.log(response);
+  return response.json();
+};
+var idEl = document.querySelector("#id");
 
-var renderCats = function({ id }) {
-    idEl.innerHTML = null;
-    for(i=0;i<id.length;i++) {
-        var cardLink = document.createElement('a');
-        cardLink.href = results.url
-        idEl.appendChild
-    }
-}
+var renderCats = function (data) {
+  console.log(data);
+  idEl.innerHTML = null;
+  for (i = 0; i < data.length; i++) {
+    var cardLink = document.createElement("img");
+    cardLink.setAttribute("src", data[i].url);
+    idEl.appendChild(cardLink);
+  }
+};
 
-
-
-fetch(apiURL) 
-    .then(toJSON); 
-        console.log(response);
-    
-    .then(renderCats) 
-        console.log(data);
-    
-    
-    .catch(function (err) {
-        console.log(err)
-    })
-
-    
-
-console.log("hello")
-
-
-
+fetch(apiURL)
+  .then(toJSON)
+  .then(renderCats)
+  .catch(function (err) {
+    console.log(err);
+  });
