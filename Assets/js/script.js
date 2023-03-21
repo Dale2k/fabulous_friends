@@ -1,4 +1,5 @@
-var apiURL = "https://api.thecatapi.com/v1/images/search?&limit=10";
+var baseURL = "https://api.thecatapi.com/v1/images/search?";
+
 
 var toJSON = function (response) {
   console.log(response);
@@ -16,9 +17,17 @@ var renderCats = function (data) {
   }
 };
 
+if (format) {
+    apiURL = baseURL + format + q;
+  }
+
+var apiURL = baseURL + q;
+
+
 fetch(apiURL)
   .then(toJSON)
   .then(renderCats)
   .catch(function (err) {
     console.log(err);
   });
+
