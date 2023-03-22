@@ -1,4 +1,7 @@
 var apiURL = "https://dog.ceo/api/breed/hound/images";
+var formatInput = document.querySelector('#format');
+
+
 
 var toJSON = function (response) {
   console.log(response);
@@ -28,3 +31,15 @@ fetch(apiURL)
   .catch(function (err) {
     console.log(err);
   });
+
+  var format = formatInput.value.trim();
+
+  
+  var baseURL = 'https://dog.ceo/api/breed/';
+  console.log(baseURL)
+
+
+
+  if (format) {
+    apiURL = baseURL + format + '/images/random'
+  }

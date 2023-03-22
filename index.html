@@ -9,7 +9,31 @@
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
   </head>
   <body>
-    <h2 id="id"></h2>
+    <!-- <h2 id="id"></h2> -->
+
+    <h2>Search by Breed</h2>
+    <form id="search">
+      <div class="mb-3">
+        <input type="text" class="form-control" id="q" placeholder="Search Term">
+      </div>
+      <div class="mb-3">
+        <select class="form-select" id="format">
+          <option value="">--Select Breed--</option>
+          <option value="Dalmation">Dalmation</option>
+          <option value="Boxer">Boxer</option>
+          <option value="Pitbull">Pitbull</option>
+          <option value="Akita">Akita</option>
+          <option value="Bulldog">Bulldog</option>
+          <option value="Dingo">Dingo</option>
+          <option value="Doberman">Doberman</option>
+          <option value="Eskimo">Eskimo</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+
+
     <script src="./Assets/js/script.js"></script>
   </body>
 </html>
