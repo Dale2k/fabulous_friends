@@ -1,5 +1,4 @@
-var baseURL = "https://api.thecatapi.com/v1/images/search?";
-
+var apiURL = "https://dog.ceo/api/breed/hound/images";
 
 var toJSON = function (response) {
   console.log(response);
@@ -10,19 +9,18 @@ var idEl = document.querySelector("#id");
 var renderCats = function (data) {
   console.log(data);
   idEl.innerHTML = null;
-  for (i = 0; i < data.length; i++) {
+  for (i = 0; i < data.message.length; i++) {
     var cardLink = document.createElement("img");
-    cardLink.setAttribute("src", data[i].url);
+    cardLink.setAttribute("src", data.message[i]);
     idEl.appendChild(cardLink);
   }
 };
 
-if (format) {
-    apiURL = baseURL + format + q;
-  }
+// if (format) {
+//   apiURL = baseURL + format + q;
+// }
 
-var apiURL = baseURL + q;
-
+// var apiURL = baseURL + q;
 
 fetch(apiURL)
   .then(toJSON)
@@ -30,4 +28,3 @@ fetch(apiURL)
   .catch(function (err) {
     console.log(err);
   });
-
