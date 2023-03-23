@@ -13,6 +13,7 @@ var cardLink = document.createElement("img");
 // dogShowUrl = dogShowUrl.value.url;
 
 var catShowEl = document.querySelector("#catShow");
+var dogShowEl = document.querySelector("#dogShow");
 
 var catBasic2 =
   "https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=" +
@@ -21,16 +22,20 @@ var catBasic2 =
 
 // local storage dog
 var getSearchedDog = function () {
-  return JSON.parse(localStorage.getItem("searchedDog")) || [];
+  let dogHistory = JSON.parse(localStorage.getItem("searchedDog"));
+  console.log(dogHistory);
+  let new2Img = document.createElement("img");
+  new2Img.setAttribute("src", dogHistory);
+  dogShowEl.append(new2Img);
 };
 
 var setSearchedDog = function (text) {
-  var searchedDog = getSearchedDog();
-  searchedDog.push(text);
-  localStorage.setItem("searchedDog", JSON.stringify(searchedDog));
+  // var searchedDog = getSearchedDog();
+  // searchedDog.push(text);
+  return localStorage.setItem("searchedDog", JSON.stringify(text));
 };
 
-//  local storage Cat
+// //  local storage Cat
 var getSearchedCat = function () {
   let catHistory = JSON.parse(localStorage.getItem("searchedCat"));
   console.log(catHistory);
@@ -110,3 +115,4 @@ function catBreed() {
 starBtn2.addEventListener("click", catBreed);
 
 getSearchedCat();
+getSearchedDog();
