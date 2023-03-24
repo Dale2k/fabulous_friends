@@ -1,83 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fabulous Friends</title>
-    <!-- Minified version -->
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
-  </head>
 
-  <body>
-    <h2 id="id"></h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabulous Friends</title>
+  <!-- Minified version -->
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+  <link rel="stylesheet" href="./Assets/css/style.css">
+</head>
 
-    <h2>Search by Dog Breed</h2>
-    <!-- <form id="search"> -->
-    <!-- <div class="mb-3">
-        <input type="text" class="form-control" id="q" placeholder="Search Term">
-      </div> -->
-    <div class="mb-3">
-      <select class="form-select" id="format">
-        <option value="">--Select Breed--</option>
-        <option value="dalmatian">Dalmatian</option>
-        <option value="boxer">Boxer</option>
-        <option value="pitbull">Pitbull</option>
-        <option value="akita">Akita</option>
-        <option value="bulldog">Bulldog</option>
-        <option value="dingo">Dingo</option>
-        <option value="doberman">Doberman</option>
-        <option value="eskimo">Eskimo</option>
-      </select>
-    </div>
+<body>
+  <header>
+    <h1>Fabulous Friends</h1>
+  </header>
+  <div>
+    <main>
+      <aside>
+        <h2>Search by Dog Breed</h2>
+        <form id="dogSearch">
+          <div class="mb-3">
+            <select class="form-select" id="formatDog">
+              <option value="">--Select Breed--</option>
+              <option value="dalmatian">Dalmatian</option>
+              <option value="boxer">Boxer</option>
+              <option value="pitbull">Pitbull</option>
+              <option value="akita">Akita</option>
+              <option value="bulldog">Bulldog</option>
+              <option value="dingo">Dingo</option>
+              <option value="doberman">Doberman</option>
+              <option value="eskimo">Eskimo</option>
+            </select>
+          </div>
+        </form>
 
-    <button class="btn btn1 btn-primary">Search</button>
-    <!-- </form> -->
+        <h2>Search by Cat Breed</h2>
+        <form id="catSearch">
+          <div class="mb-3">
+            <select class="form-select" id="formatCat">
+              <option value="">--Select Breed--</option>
+              <option value="abys">Abyssinian</option>
+              <option value="aege">Aegean</option>
+              <option value="abob">American Bobtail</option>
+              <option value="acur">American Curl</option>
+              <option value="asho">American Shorthair</option>
+              <option value="awir">American Wirehair</option>
+              <option value="amau">Arabian Mau</option>
+              <option value="bali">Balinese</option>
+              <option value="beng">Bengal</option>
+              <option value="birm">Birman</option>
+              <option value="bslo">British Longhair</option>
+              <option value="bsho">British Shorthair</option>
+              <option value="bure">Burmese</option>
+              <option value="ctif">Chantilly-Tiffany</option>
+              <option value="cspa">California Spangled</option>
+              <option value="char">Chartreux</option>
+              <option value="chau">Chausie</option>
+              <option value="csho">Colorpoint Shorthair</option>
+              <option value="crex">Cornish Rex</option>
+              <option value="dons">Donskoy</option>
+              <option value="lihu">Dragon Li</option>
+              <option value="emau">Egyptian Mau</option>
+              <option value="ebur">European Burmese"</option>
+              <option value="esho">Exotic Shorthair</option>
+            </select>
+          </div>
+        </form>
+      </aside>
+      <div>
+        <div id="mostRecentSearch">
+          <h2>Your Fabulous Friend</h2>
+          <div class="img-container"></div>
+        </div>
+        <div id="dogShow">
+          <h2 style="display:none">Most Recently Searched Dog</h2>
+          <div class="img-container"></div>
+        </div>
+        <div id="catShow">
+          <h2 style="display:none">Most Recently Searched Cat</h2>
+          <div class="img-container"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./Assets/js/script.js"></script>
+</body>
 
-    <h2>Search by Cat Breed</h2>
-    <!-- <form id="search"> -->
-    <!-- <div class="mb-3">
-        <input type="text" class="form-control" id="q" placeholder="Search Term">
-      </div> -->
-    <div class="mb-3">
-      <select class="form-select" id="formatCat">
-        <option value="">--Select Breed--</option>
-        <option value="abys">Abyssinian</option>
-        <option value="aege">Aegean</option>
-        <option value="abob">American Bobtail</option>
-        <option value="acur">American Curl</option>
-        <option value="asho">American Shorthair</option>
-        <option value="awir">American Wirehair</option>
-        <option value="amau">Arabian Mau</option>
-        <option value="bali">Balinese</option>
-        <option value="beng">Bengal</option>
-        <option value="birm">Birman</option>
-        <option value="bslo">British Longhair</option>
-        <option value="bsho">British Shorthair</option>
-        <option value="bure">Burmese</option>
-        <option value="ctif">Chantilly-Tiffany</option>
-        <option value="cspa">California Spangled</option>
-        <option value="char">Chartreux</option>
-        <option value="chau">Chausie</option>
-        <option value="csho">Colorpoint Shorthair</option>
-        <option value="crex">Cornish Rex</option>
-        <option value="dons">Donskoy</option>
-        <option value="lihu">Dragon Li</option>
-        <option value="emau">Egyptian Mau</option>
-        <option value="ebur">European Burmese"</option>
-        <option value="esho">Exotic Shorthair</option>
-      </select>
-    </div>
-
-    <button class="btn btn2 btn-primary">Search</button>
-
-    <div id="catShow">
-      <h2>recent cat image</h2>
-    </div>
-    <div id="dogShow">
-      <h2>recent dog image</h2>
-    </div>
-
-    <script src="./Assets/js/script.js"></script>
-  </body>
 </html>
